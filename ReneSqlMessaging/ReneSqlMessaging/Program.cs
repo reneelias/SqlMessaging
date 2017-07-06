@@ -81,18 +81,46 @@ namespace ReneSqlMessaging
             connection.Close();
         }
 
+        private static DataTable GetDataTable(SqlConnection connection, string procedureName, bool isNonQuery, params SqlParameter[] parameters)
+        {
+            SqlCommand command = new SqlCommand(procedureName);
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddRange(parameters);
+
+            if (isNonQuery)
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                return null;
+            }
+
+            DataTable dataSet = new DataTable();
+
+            //TODO: Create data adapter; 
+
+            return dataSet;
+        }
+
         static void Register(SqlConnection connection)
         {
-            SqlCommand registerCommand = new SqlCommand("usp_Register");
-            registerCommand.Connection = connection;
-            registerCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            //SqlCommand registerCommand = new SqlCommand("usp_Register");
+            //registerCommand.Connection = connection;
+            //registerCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
             Console.Write("Username: ");
             string username = Console.ReadLine();
             Console.Write("Password: ");
             string password = Console.ReadLine();
-            registerCommand.Parameters.AddWithValue("@username", username);
-            registerCommand.Parameters.AddWithValue("@password", password);
-            registerCommand.ExecuteNonQuery();
+
+            GetDataTable(connection, "usp_Register", true, new SqlParameter("@username", username), new SqlParameter("@password", password));
+
+            //registerCommand.Parameters.AddWithValue("@username", username);
+            //registerCommand.Parameters.AddWithValue("@password", password);
+            //registerCommand.ExecuteNonQuery();
         }
 
         static bool Login(SqlConnection connection, ref string username, string password)
@@ -106,7 +134,6 @@ namespace ReneSqlMessaging
             password = Console.ReadLine();
             loginCommand.Parameters.AddWithValue("@username", username);
             loginCommand.Parameters.AddWithValue("@password", password);
-            loginCommand.ExecuteNonQuery();
 
             SqlDataAdapter adapter = new SqlDataAdapter(loginCommand);
             DataTable table = new DataTable();
@@ -138,7 +165,6 @@ namespace ReneSqlMessaging
             viewAllMessagesCommand.Connection = connection;
             viewAllMessagesCommand.CommandType = System.Data.CommandType.StoredProcedure;
             viewAllMessagesCommand.Parameters.AddWithValue("@sender", username);
-            viewAllMessagesCommand.ExecuteNonQuery();
 
             SqlDataAdapter adapter = new SqlDataAdapter(viewAllMessagesCommand);
             DataTable table = new DataTable();
