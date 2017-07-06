@@ -7,3 +7,9 @@ c:\users\visitordl7\documents\visual studio 2015\Projects\ReneSqlMessaging\ReneS
 \\gmrshared\xfers\Instructors\Rene\ReneSqlMessaging\ReneSqlMessaging\bin\Debug\ReneSqlMessaging.exe.config
 \\gmrshared\xfers\Instructors\Rene\ReneSqlMessaging\ReneSqlMessaging\obj\Debug\ReneSqlMessaging.exe
 \\gmrshared\xfers\Instructors\Rene\ReneSqlMessaging\ReneSqlMessaging\obj\Debug\ReneSqlMessaging.pdb
+C:\Users\GMRInstructor\Documents\Visual Studio 2015\Projects\ReneSqlMessaging\ReneSqlMessaging\bin\Debug\ReneSqlMessaging.exe.config
+C:\Users\GMRInstructor\Documents\Visual Studio 2015\Projects\ReneSqlMessaging\ReneSqlMessaging\obj\Debug\ReneSqlMessaging.exe
+C:\Users\GMRInstructor\Documents\Visual Studio 2015\Projects\ReneSqlMessaging\ReneSqlMessaging\obj\Debug\ReneSqlMessaging.pdb
+C:\Users\GMRInstructor\Documents\Visual Studio 2015\Projects\ReneSqlMessaging\ReneSqlMessaging\bin\Debug\ReneSqlMessaging.exe
+C:\Users\GMRInstructor\Documents\Visual Studio 2015\Projects\ReneSqlMessaging\ReneSqlMessaging\bin\Debug\ReneSqlMessaging.pdb
+C:\Users\GMRInstructor\Documents\Visual Studio 2015\Projects\ReneSqlMessaging\ReneSqlMessaging\obj\Debug\ReneSqlMessaging.csprojResolveAssemblyReference.cache
